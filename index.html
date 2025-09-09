@@ -3,122 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore properties in Bulandshahr on BulandshahrHomes. Find residential land and plots in Shikarpur, Bulandshahr with prices starting at 25 Lac for 2.09 acres.">
-    <meta name="keywords" content="buy property in Bulandshahr, residential land in Shikarpur, plots in Bulandshahr, property in Shikarpur, Bulandshahr real estate, affordable land Bulandshahr">
-    <title>BulandshahrHomes | Property in Bulandshahr</title>
+    <meta name="description" content="Explore properties in Bulandshahr on BulandshahrHomes. Find residential land, plots in Shikarpur, and more with listings like 25 Lac for 2.09 acres.">
+    <meta name="keywords" content="properties in Bulandshahr, residential land Bulandshahr, plots in Shikarpur, buy property Bulandshahr, real estate Bulandshahr">
+    <title>BulandshahrHomes - Property Listings</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #F8F9FA;
-            color: #333;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            background-color: #f5f6f5;
+            color: #333;
         }
         header {
-            background-color: #005BAC;
+            background-color: #003087;
             color: white;
-            text-align: center;
-            padding: 2rem 1rem;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        nav {
-            background-color: #FF4500;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
+        header .logo {
+            font-size: 24px;
             font-weight: bold;
         }
-        nav a:hover {
+        header .menu {
+            display: flex;
+            align-items: center;
+        }
+        header .menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        header .menu a:hover {
             text-decoration: underline;
         }
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        header .search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
         }
-        section {
-            margin-bottom: 2rem;
+        header .search-bar input {
+            width: 100%;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
         }
-        h2 {
-            color: #005BAC;
-            border-bottom: 2px solid #FF4500;
-            padding-bottom: 0.5rem;
+        header .post-property {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .container {
+            display: flex;
+            margin: 20px;
         }
-        li {
+        .sidebar {
+            width: 25%;
             background-color: white;
-            margin: 1rem 0;
-            padding: 1rem;
-            border-radius: 8px;
+            padding: 15px;
+            border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        li h3 {
-            color: #FF4500;
+        .sidebar h3 {
             margin-top: 0;
+            color: #003087;
         }
-        footer {
-            background-color: #005BAC;
+        .sidebar .budget-slider {
+            margin: 10px 0;
+        }
+        .sidebar .budget-inputs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .main-content {
+            width: 75%;
+            padding-left: 20px;
+        }
+        .filters {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .filters button {
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            padding: 5px 10px;
+            margin-right: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .filters select {
+            padding: 5px;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        .property-list .property-item {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+        }
+        .property-item img {
+            width: 150px;
+            height: 100px;
+            margin-right: 15px;
+        }
+        .property-item .details {
+            flex-grow: 1;
+        }
+        .property-item .price {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .property-item .area {
+            color: #6c757d;
+        }
+        .property-item .description {
+            margin: 5px 0;
+        }
+        .property-item .contact {
+            background-color: #007bff;
             color: white;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            nav a {
-                display: block;
-                margin: 0.5rem 0;
-            }
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>BulandshahrHomes | Property in Bulandshahr</h1>
-        <p>Discover the best properties in Bulandshahr, including residential land and plots in Shikarpur starting at 25 Lac for 2.09 acres.</p>
+        <div class="logo">BulandshahrHomes</div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#properties">Properties</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Bulandshahr">
+        </div>
+        <button class="post-property">Post property FREE</button>
     </header>
-    <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#properties">Properties</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <main>
-        <section id="introduction">
-            <h2>Introduction to BulandshahrHomes</h2>
-            <p>BulandshahrHomes brings you the latest property listings in Bulandshahr. Explore residential land and plots, especially in Shikarpur, with prices starting at 25 Lac for 2.09 acres. Our platform focuses on affordable and verified properties to help you invest wisely.</p>
-        </section>
-        <section id="properties">
-            <h2>Featured Properties in Bulandshahr</h2>
-            <ul>
-                <li>
-                    <h3>Shikarpur, Bulandshahr</h3>
-                    <p>Residential Land / Plot in Shikarpur, Bulandshahr<br>Price: 25 Lac | 2.09 acres (19,425 sqm)<br>Plot Area: 012 sqft<br>9-3 biga approx agriculture land at nearest chhatari, tehsil Shikarpur, Bulandshahr, 11 lakh rupees per biga, general caste...</p>
-                    <p>Owner | 1w ago | <a href="#">View Number</a> | <a href="#">Contact</a></p>
-                </li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>For more details or to schedule a visit, reach out to our team. We’re here to assist you in finding the perfect property in Bulandshahr.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 BulandshahrHomes. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Hide already seen</h3>
+            <label><input type="checkbox"> Toggle
