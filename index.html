@@ -29,153 +29,228 @@
     }
   }
   </script>
+  <style>
+    /* Custom Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.8s ease-out;
+    }
+    /* Hamburger Menu */
+    .hamburger div {
+      transition: all 0.3s ease;
+    }
+    .hamburger.active .line1 {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active .line2 {
+      opacity: 0;
+    }
+    .hamburger.active .line3 {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+    /* FAQ Toggle */
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-content.active {
+      max-height: 200px;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-50 font-sans text-gray-800">
   <!-- Header -->
-  <header id="header" class="bg-blue-600 text-white py-4 sticky top-0 z-10 shadow-md transition-all duration-300">
+  <header id="header" class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-4 sticky top-0 z-20 shadow-lg transition-all duration-300">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Bulandshahr Real Estate</h1>
-      <nav>
-        <a href="#introduction" class="mx-2 hover:text-yellow-300">Introduction</a>
-        <a href="#why-bulandshahr" class="mx-2 hover:text-yellow-300">Why Bulandshahr?</a>
-        <a href="#kala-aam" class="mx-2 hover:text-yellow-300">Kala Aam</a>
-        <a href="#tips" class="mx-2 hover:text-yellow-300">Tips</a>
-        <a href="#trends" class="mx-2 hover:text-yellow-300">Market Trends</a>
-        <a href="#cta" class="mx-2 hover:text-yellow-300">Get Started</a>
+      <h1 class="text-xl md:text-2xl font-bold">Bulandshahr Real Estate</h1>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-4">
+        <a href="#introduction" class="hover:text-yellow-300 transition-colors">Introduction</a>
+        <a href="#why-bulandshahr" class="hover:text-yellow-300 transition-colors">Why Bulandshahr?</a>
+        <a href="#kala-aam" class="hover:text-yellow-300 transition-colors">Kala Aam</a>
+        <a href="#tips" class="hover:text-yellow-300 transition-colors">Tips</a>
+        <a href="#trends" class="hover:text-yellow-300 transition-colors">Market Trends</a>
+        <a href="#cta" class="hover:text-yellow-300 transition-colors">Get Started</a>
       </nav>
+      <!-- Hamburger Menu for Mobile -->
+      <div class="md:hidden">
+        <button class="hamburger flex flex-col space-y-1.5 focus:outline-none">
+          <div class="line1 w-6 h-0.5 bg-white"></div>
+          <div class="line2 w-6 h-0.5 bg-white"></div>
+          <div class="line3 w-6 h-0.5 bg-white"></div>
+        </button>
+      </div>
     </div>
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="hidden md:hidden bg-blue-700 text-white flex-col items-center space-y-4 py-4">
+      <a href="#introduction" class="hover:text-yellow-300">Introduction</a>
+      <a href="#why-bulandshahr" class="hover:text-yellow-300">Why Bulandshahr?</a>
+      <a href="#kala-aam" class="hover:text-yellow-300">Kala Aam</a>
+      <a href="#tips" class="hover:text-yellow-300">Tips</a>
+      <a href="#trends" class="hover:text-yellow-300">Market Trends</a>
+      <a href="#cta" class="hover:text-yellow-300">Get Started</a>
+    </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20">
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-16 md:py-24 animate-fadeIn">
     <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">🏡 How to Buy Property in Bulandshahr: A Focus on Kala Aam</h1>
-      <h2 class="text-2xl md:text-3xl mb-6">बुलंदशहर में प्रॉपर्टी कैसे खरीदें?</h2>
-      <p class="text-lg mb-8">Explore affordable plots & flats in Kala Aam with high investment potential!</p>
-      <a href="#cta" class="bg-yellow-400 text-blue-900 py-3 px-6 rounded-full font-semibold hover:bg-yellow-500">Explore Properties Now</a>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">🏡 How to Buy Property in Bulandshahr: A Focus on Kala Aam</h1>
+      <h2 class="text-xl md:text-3xl mb-6">बुलंदशहर में प्रॉपर्टी कैसे खरीदें?</h2>
+      <p class="text-base md:text-lg mb-8 max-w-2xl mx-auto">Explore affordable plots and flats in Kala Aam with high investment potential! | काला आम में सस्ती प्रॉपर्टी और शानदार रिटर्न्स।</p>
+      <a href="#cta" class="bg-yellow-400 text-blue-900 py-3 px-6 rounded-full font-semibold hover:bg-yellow-500 transition-colors">Explore Properties Now</a>
     </div>
   </section>
 
   <!-- Main Content -->
   <main class="container mx-auto px-4 py-12">
     <!-- Introduction -->
-    <section id="introduction" class="mb-12">
-      <h2 class="text-3xl font-bold mb-4">🌟 Bulandshahr का Real Estate Potential</h2>
-      <p class="text-lg mb-4">Bulandshahr, Uttar Pradesh का एक तेजी से उभरता हुआ शहर, real estate में एक hidden gem बन रहा है। Affordable property prices, शानदार connectivity, और growing infrastructure की वजह से <strong>buy property Bulandshahr</strong> आज investors और homebuyers की पहली पसंद है।</p>
-      <p class="text-lg mb-4">खासकर <strong>Kala Aam</strong>, जो अपनी affordability और high growth potential के लिए famous हो रहा है। चाहे आप dream home खरीदना चाहते हों या investment की तलाश में हों, <strong>Bulandshahr property sale</strong> में Kala Aam एक शानदार मौका देता है। इस ब्लॉग में हम बताएंगे कि <strong>buy property Bulandshahr in Kala Aam</strong> क्यों एक smart decision है।</p>
+    <section id="introduction" class="mb-12 animate-fadeIn">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-blue-700">🌟 Bulandshahr’s Real Estate Potential</h2>
+      <p class="text-base md:text-lg mb-4">Bulandshahr, a rapidly developing city in Uttar Pradesh, is emerging as a hidden gem in the real estate market. With affordable property prices, excellent connectivity, and growing infrastructure, <strong>buy property Bulandshahr</strong> is becoming a top choice for investors and homebuyers.</p>
+      <p class="text-base md:text-lg mb-4">Particularly, <strong>Kala Aam</strong> stands out for its affordability and high growth potential. Whether you’re looking to purchase your dream home or seeking a lucrative investment, <strong>Bulandshahr property sale</strong> in Kala Aam offers a fantastic opportunity. This blog will guide you on why <strong>buy property Bulandshahr in Kala Aam</strong> is a smart decision.</p>
     </section>
 
     <!-- Why Bulandshahr -->
-    <section id="why-bulandshahr" class="mb-12">
-      <h2 class="text-3xl font-bold mb-4">🔑 Why Bulandshahr is a Hotspot?</h2>
-      <p class="text-lg mb-4">Bulandshahr का real estate market तेजी से grow कर रहा है। यहाँ कुछ reasons हैं जो इसे <strong>buy property Bulandshahr</strong> के लिए ideal बनाते हैं:</p>
-      <ul class="list-disc pl-6 mb-4">
-        <li><strong>Connectivity</strong>: NH-91 और railway network से Delhi, Noida, और Ghaziabad से easily connected।</li>
-        <li><strong>Affordable Prices</strong>: Greater Noida या Delhi की तुलना में properties सस्ती।</li>
-        <li><strong>Infrastructure Growth</strong>: New schools, hospitals, और shopping complexes।</li>
-        <li><strong>Lifestyle Balance</strong>: शांत environment और modern facilities का perfect combo।</li>
+    <section id="why-bulandshahr" class="mb-12 animate-fadeIn">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-blue-700">🔑 Why Bulandshahr is a Hotspot?</h2>
+      <p class="text-base md:text-lg mb-4">Bulandshahr’s real estate market is experiencing rapid growth. Here are key reasons why it’s ideal to <strong>buy property Bulandshahr</strong>:</p>
+      <ul class="list-disc pl-6 mb-4 text-base md:text-lg">
+        <li><strong>Connectivity</strong>: Well-connected to Delhi, Noida, and Ghaziabad via NH-91 and railway networks, making commuting seamless.</li>
+        <li><strong>Affordable Prices</strong>: Properties are significantly cheaper compared to Greater Noida or Delhi, perfect for budget-conscious buyers.</li>
+        <li><strong>Infrastructure Growth</strong>: New schools, hospitals, and shopping complexes are transforming the city.</li>
+        <li><strong>Lifestyle Balance</strong>: Offers a perfect blend of a peaceful environment and modern facilities.</li>
       </ul>
-      <p class="text-lg mb-4"><strong>Bulandshahr property sale</strong> में plots, flats, और commercial spaces की variety उपलब्ध है। City का growth trajectory बताता है कि अभी <strong>buy property Bulandshahr</strong> करना एक smart investment है।</p>
+      <p class="text-base md:text-lg mb-4">The <strong>Bulandshahr property sale</strong> market offers a variety of options, including plots, flats, and commercial spaces. The city’s growth trajectory indicates that now is the perfect time to <strong>buy property Bulandshahr</strong> for a smart investment.</p>
     </section>
 
     <!-- Spotlight on Kala Aam -->
-    <section id="kala-aam" class="mb-12">
-      <h2 class="text-3xl font-bold mb-4">📍 Spotlight on Kala Aam</h2>
-      <p class="text-lg mb-4"><strong>Buy property Bulandshahr in Kala Aam</strong> को लोग क्यों prefer कर रहे हैं? Let’s break it down:</p>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">1. Strategic Location</h3>
-          <p>Kala Aam, NH-91 के पास होने की वजह से, Bulandshahr city center और Delhi-NCR से well-connected है। Daily commuters के लिए perfect।</p>
+    <section id="kala-aam" class="mb-12 animate-fadeIn">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-blue-700">📍 Spotlight on Kala Aam</h2>
+      <p class="text-base md:text-lg mb-4">Why are people choosing to <strong>buy property Bulandshahr in Kala Aam</strong>? Here’s why:</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">1. Strategic Location</h3>
+          <p class="text-sm md:text-base">Located near NH-91, Kala Aam is well-connected to Bulandshahr city center and Delhi-NCR, ideal for daily commuters.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">2. Budget-Friendly Properties</h3>
-          <p>Kala Aam में residential plots, flats, और houses सस्ते हैं। <strong>Bulandshahr property sale</strong> में first-time buyers के लिए ideal।</p>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">2. Budget-Friendly Properties</h3>
+          <p class="text-sm md:text-base">Kala Aam offers affordable residential plots, flats, and houses, making it perfect for first-time buyers in <strong>Bulandshahr property sale</strong>.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">3. Growing Infrastructure</h3>
-          <p>New schools, healthcare centers, और markets Kala Aam को families के लिए attractive बनाते हैं।</p>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">3. Growing Infrastructure</h3>
+          <p class="text-sm md:text-base">New schools, healthcare centers, and markets are making Kala Aam attractive for families.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">4. Investment Potential</h3>
-          <p>Kala Aam में अभी prices low हैं, लेकिन demand बढ़ने से value appreciation पक्का है। <strong>Buy property Bulandshahr in Kala Aam</strong> for high ROI।</p>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">4. Investment Potential</h3>
+          <p class="text-sm md:text-base">With low current prices and increasing demand, <strong>buy property Bulandshahr in Kala Aam</strong> ensures high ROI in the future.</p>
         </div>
       </div>
     </section>
 
     <!-- Practical Tips -->
-    <section id="tips" class="mb-12">
-      <h2 class="text-3xl font-bold mb-4">🛠️ Practical Tips to Buy Property</h2>
-      <p class="text-lg mb-4"><strong>Bulandshahr property sale</strong> में सही property चुनने के लिए ये tips follow करें:</p>
-      <ol class="list-decimal pl-6 mb-4">
-        <li><strong>Market Research</strong>: 99acres, MagicBricks, या Housing.com पर <strong>Bulandshahr property sale</strong> listings check करें।</li>
-        <li><strong>Legal Verification</strong>: Title deeds, NOC, और approvals lawyer से verify करवाएं।</li>
-        <li><strong>Location Check</strong>: <strong>Buy property Bulandshahr in Kala Aam</strong> से पहले schools, hospitals, और transport देखें।</li>
-        <li><strong>Budget Planning</strong>: Property price के साथ stamp duty, registration fees add करें।</li>
-        <li><strong>Local Realtors</strong>: Trusted agents से best <strong>Bulandshahr property sale</strong> deals ढूंढें।</li>
-        <li><strong>Financing Options</strong>: Low-interest home loans compare करें।</li>
+    <section id="tips" class="mb-12 animate-fadeIn">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-blue-700">🛠️ Practical Tips to Buy Property</h2>
+      <p class="text-base md:text-lg mb-4">To choose the right property in <strong>Bulandshahr property sale</strong>, follow these tips:</p>
+      <ol class="list-decimal pl-6 mb-4 text-base md:text-lg">
+        <li><strong>Market Research</strong>: Check <strong>Bulandshahr property sale</strong> listings on platforms like 99acres, MagicBricks, or Housing.com to find affordable deals in Kala Aam.</li>
+        <li><strong>Legal Verification</strong>: Ensure title deeds, NOC, and land approvals are verified by a trusted lawyer to avoid future issues.</li>
+        <li><strong>Location Check</strong>: Before you <strong>buy property Bulandshahr in Kala Aam</strong>, assess proximity to schools, hospitals, and transport facilities.</li>
+        <li><strong>Budget Planning</strong>: Include property price, stamp duty, registration fees, and maintenance costs in your budget.</li>
+        <li><strong>Local Realtors</strong>: Connect with trusted agents for the best <strong>Bulandshahr property sale</strong> deals.</li>
+        <li><strong>Financing Options</strong>: Compare low-interest home loans from banks and NBFCs for affordable EMIs.</li>
       </ol>
     </section>
 
     <!-- Market Trends -->
-    <section id="trends" class="mb-12">
-      <h2 class="text-3xl font-bold mb-4">📈 Bulandshahr Property Market Trends</h2>
-      <p class="text-lg mb-4">Bulandshahr का real estate market growth phase में है। Key trends:</p>
-      <ul class="list-disc pl-6 mb-4">
-        <li><strong>Price Appreciation</strong>: Kala Aam में prices steadily बढ़ रहे हैं।</li>
-        <li><strong>Demand Surge</strong>: Affordable rates से <strong>buy property Bulandshahr in Kala Aam</strong> की demand बढ़ रही है।</li>
-        <li><strong>Infrastructure Push</strong>: Industrial projects और connectivity property value boost करेंगे।</li>
+    <section id="trends" class="mb-12 animate-fadeIn">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-blue-700">📈 Bulandshahr Property Market Trends</h2>
+      <p class="text-base md:text-lg mb-4">Bulandshahr’s real estate market is in a growth phase. Key trends include:</p>
+      <ul class="list-disc pl-6 mb-4 text-base md:text-lg">
+        <li><strong>Price Appreciation</strong>: Property prices in Kala Aam are steadily rising, promising high returns.</li>
+        <li><strong>Demand Surge</strong>: Affordable rates are driving demand to <strong>buy property Bulandshahr in Kala Aam</strong>.</li>
+        <li><strong>Infrastructure Push</strong>: New industrial projects and improved connectivity will boost property values.</li>
       </ul>
-      <p class="text-lg mb-4">Experts का मानना है कि अगले 5-7 साल में <strong>Bulandshahr property sale</strong> में Kala Aam properties 20-30% returns दे सकती हैं।</p>
+      <p class="text-base md:text-lg mb-4">Experts predict that <strong>Bulandshahr property sale</strong> in Kala Aam could yield 20-30% returns in the next 5-7 years.</p>
     </section>
 
     <!-- Call-to-Action -->
-    <section id="cta" class="mb-12 text-center">
-      <h2 class="text-3xl font-bold mb-4">✅ Start Your Property Journey Now!</h2>
-      <p class="text-lg mb-4">Abhi mauka hai! <strong>Buy property Bulandshahr</strong> और secure करें एक high-potential investment। Kala Aam में affordable plots, flats, और houses available हैं।</p>
-      <p class="text-lg mb-4">Explore <strong>Bulandshahr property sale</strong> on 99acres, MagicBricks, या Housing.com। Trusted realtors se contact karein aur site visit book karein!</p>
-      <a href="https://www.99acres.com" target="_blank" class="bg-blue-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-blue-700">Explore Properties Now</a>
+    <section id="cta" class="mb-12 text-center animate-fadeIn">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-blue-700">✅ अपनी प्रॉपर्टी जर्नी अब शुरू करें!</h2>
+      <p class="text-base md:text-lg mb-4">अभी मौका है! <strong>Buy property Bulandshahr</strong> और secure करें एक high-potential investment। काला आम में affordable plots, flats, और houses उपलब्ध हैं।</p>
+      <p class="text-base md:text-lg mb-4">Explore <strong>Bulandshahr property sale</strong> on 99acres, MagicBricks, या Housing.com। Trusted realtors से contact करें और site visit book करें!</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://www.99acres.com" target="_blank" class="bg-blue-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-blue-700 transition-colors">99acres पर देखें</a>
+        <a href="https://www.magicbricks.com" target="_blank" class="bg-blue-600 text-white py-3 px-6 rounded-full font-semibold hover:bg-blue-700 transition-colors">MagicBricks पर देखें</a>
+      </div>
     </section>
 
     <!-- FAQs -->
-    <section class="mb-12">
-      <h2 class="text-3xl font-bold mb-4">❓ FAQs (People Also Ask)</h2>
+    <section class="mb-12 animate-fadeIn">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-blue-700">❓ FAQs (लोग अक्सर पूछते हैं)</h2>
       <div class="space-y-4">
-        <div class="bg-white p-4 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">1. Bulandshahr mein property kyun kharidein?</h3>
-          <p>Bulandshahr offers affordable prices, great connectivity, aur growing infrastructure. <strong>Buy property Bulandshahr</strong> for high ROI.</p>
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+          <button class="faq-toggle w-full text-left text-lg md:text-xl font-semibold">1. बुलंदशहर में प्रॉपर्टी क्यों खरीदें?</button>
+          <div class="faq-content">
+            <p class="text-sm md:text-base mt-2">Bulandshahr offers affordable prices, great connectivity, और growing infrastructure. <strong>Buy property Bulandshahr</strong> for high ROI और peaceful living.</p>
+          </div>
         </div>
-        <div class="bg-white p-4 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">2. Kala Aam mein property kyun best hai?</h3>
-          <p>Kala Aam budget-friendly, well-connected, aur high growth potential wala hai. <strong>Buy property Bulandshahr in Kala Aam</strong> for long-term gains.</p>
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+          <button class="faq-toggle w-full text-left text-lg md:text-xl font-semibold">2. काला आम में प्रॉपर्टी क्यों बेस्ट है?</button>
+          <div class="faq-content">
+            <p class="text-sm md:text-base mt-2">काला आम budget-friendly, well-connected, और high growth potential वाला है। <strong>Buy property Bulandshahr in Kala Aam</strong> for long-term gains.</p>
+          </div>
         </div>
-        <div class="bg-white p-4 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">3. Bulandshahr property sale mein kya options hain?</h3>
-          <p>Plots, flats, houses, aur commercial spaces available hain. <strong>Bulandshahr property sale</strong> mein Kala Aam ke deals affordable hain.</p>
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+          <button class="faq-toggle w-full text-left text-lg md:text-xl font-semibold">3. Bulandshahr property sale में क्या options हैं?</button>
+          <div class="faq-content">
+            <p class="text-sm md:text-base mt-2">Plots, flats, houses, और commercial spaces उपलब्ध हैं। <strong>Bulandshahr property sale</strong> में काला आम के deals affordable हैं।</p>
+          </div>
         </div>
-        <div class="bg-white p-4 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">4. Property kharidte waqt kya check karna chahiye?</h3>
-          <p>Legal documents, location, amenities, aur budget verify karein.</p>
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+          <button class="faq-toggle w-full text-left text-lg md:text-xl font-semibold">4. प्रॉपर्टी खरीदते वक्त क्या चेक करना चाहिए?</button>
+          <div class="faq-content">
+            <p class="text-sm md:text-base mt-2">Legal documents, location, amenities, और budget verify करें। Trusted realtors से guidance लें।</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white py-6">
+  <footer class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-8">
     <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2025 Your Website Name. All rights reserved.</p>
+      <p class="text-sm md:text-base">&copy; 2025 Your Website Name. सर्वाधिकार सुरक्षित।</p>
+      <div class="mt-4 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://www.99acres.com" target="_blank" class="hover:text-yellow-300">99acres</a>
+        <a href="https://www.magicbricks.com" target="_blank" class="hover:text-yellow-300">MagicBricks</a>
+        <a href="https://www.housing.com" target="_blank" class="hover:text-yellow-300">Housing.com</a>
+      </div>
     </div>
   </footer>
 
   <!-- JavaScript for Interactivity -->
   <script>
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('#mobile-nav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('hidden');
+      mobileNav.classList.toggle('flex');
+    });
+
     // Sticky Header Effect
     window.addEventListener('scroll', () => {
       const header = document.getElementById('header');
       if (window.scrollY > 50) {
-        header.classList.add('bg-opacity-90', 'shadow-lg');
+        header.classList.add('bg-opacity-90', 'shadow-xl');
       } else {
-        header.classList.remove('bg-opacity-90', 'shadow-lg');
+        header.classList.remove('bg-opacity-90', 'shadow-xl');
       }
     });
 
@@ -186,6 +261,20 @@
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
+        // Close mobile menu after clicking
+        if (!mobileNav.classList.contains('hidden')) {
+          hamburger.classList.remove('active');
+          mobileNav.classList.add('hidden');
+          mobileNav.classList.remove('flex');
+        }
+      });
+    });
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.classList.toggle('active');
       });
     });
   </script>
